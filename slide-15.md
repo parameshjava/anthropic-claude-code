@@ -86,10 +86,10 @@ Scaling Claude Code is not about giving everyone access and hoping for the best.
 
 ## Rollout Timeline (Suggested)
 
-| Week | Action |
-|------|--------|
-| 1 | Create CLAUDE.md template, pilot with 2-3 engineers |
-| 2 | Add scoped rules and essential hooks |
-| 3 | Configure MCP integrations, create custom agents |
-| 4 | Team-wide workshop, full rollout |
-| 5+ | Iterate based on feedback, add skills as patterns emerge |
+| Week | Action                                                   |
+| ---- | -------------------------------------------------------- |
+| 1    | Create CLAUDE.md template, pilot with 2-3 engineers      |
+| 2    | Add scoped rules and essential hooks                     |
+| 3    | Configure MCP integrations, create custom agents         |
+| 4    | Team-wide workshop, full rollout                         |
+| 5+   | Iterate based on feedback, add skills as patterns emerge |

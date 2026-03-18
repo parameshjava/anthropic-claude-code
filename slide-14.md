@@ -47,12 +47,12 @@ API-rate billing means you pay for what you use, with full visibility into who i
 
 There are four choices, depending on infrastructure and compliance requirements:
 
-| Option | Best For |
-|--------|----------|
+| Option                     | Best For                                                   |
+| -------------------------- | ---------------------------------------------------------- |
 | **Anthropic Cloud (SaaS)** | Fastest setup, fully managed, ideal for teams starting out |
-| **AWS Bedrock** | VPC isolation, IAM integration, AWS-native organizations |
-| **Google Vertex AI** | GCP-native, data residency requirements in GCP regions |
-| **Microsoft Foundry** | Azure-native, enterprise policies, Microsoft ecosystem |
+| **AWS Bedrock**            | VPC isolation, IAM integration, AWS-native organizations   |
+| **Google Vertex AI**       | GCP-native, data residency requirements in GCP regions     |
+| **Microsoft Foundry**      | Azure-native, enterprise policies, Microsoft ecosystem     |
 
 For organizations with strict data residency requirements, Bedrock, Vertex, and Foundry keep data within the cloud provider's infrastructure. The Claude models run inside the VPC — no data leaves the environment.
 
@@ -70,12 +70,12 @@ For organizations with strict data residency requirements, Bedrock, Vertex, and 
 
 ### Security Commitments
 
-| Certification | Status |
-|--------------|--------|
-| SOC 2 Type II | Certified |
-| No data training | Contractual commitment |
-| TLS 1.3 + AES-256 | All data in transit and at rest |
-| VPC isolation | Available via Bedrock/Vertex/Foundry |
+| Certification     | Status                               |
+| ----------------- | ------------------------------------ |
+| SOC 2 Type II     | Certified                            |
+| No data training  | Contractual commitment               |
+| TLS 1.3 + AES-256 | All data in transit and at rest      |
+| VPC isolation     | Available via Bedrock/Vertex/Foundry |
 
 ---
 

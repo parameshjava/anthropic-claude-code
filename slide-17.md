@@ -79,13 +79,13 @@ That is it. Three steps and you have AI-powered CI/CD.
 
 These are non-negotiable for enterprise adoption:
 
-| Practice | Why |
-|----------|-----|
-| **Never hardcode API keys** | Use GitHub Secrets exclusively |
-| **Scope permissions to least privilege** | Each job gets only the permissions it needs |
-| **Pin actions by commit SHA** | Prevents supply-chain attacks via compromised action versions |
-| **Require human approval before merge** | Claude proposes, humans approve — always |
-| **Fork PRs don't get secrets by default** | Prevents malicious forks from accessing your API keys |
+| Practice                                  | Why                                                            |
+| ----------------------------------------- | -------------------------------------------------------------- |
+| **Never hardcode API keys**               | Use GitHub Secrets exclusively                                 |
+| **Scope permissions to least privilege**  | Each job gets only the permissions it needs                    |
+| **Pin actions by commit SHA**             | Prevents supply-chain attacks via compromised action versions  |
+| **Require human approval before merge**   | Claude proposes, humans approve — always                       |
+| **Fork PRs don't get secrets by default** | Prevents malicious forks from accessing your API keys          |
 | **Use `--max-turns` to cap cost per run** | Prevents runaway sessions from consuming excessive API credits |
 
 ### Built on Claude Agent SDK

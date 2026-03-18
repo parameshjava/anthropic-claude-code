@@ -16,12 +16,18 @@ The answer is a six-step trust pipeline. Each step adds a layer of verification 
 
 **Why:** Grounding means giving Claude the actual source code to reason about — not asking it to recall from training data. When Claude reads your actual `handler.ts`, it reasons about your actual code. When it guesses, it hallucinates.
 
+**The key principle: Ask, Don't Assume.** When requirements are unclear or necessary information is missing, Claude should stop and ask — not fill gaps with plausible-sounding guesses. Without this instruction, Claude will invent API signatures, assume database column names, and fabricate config values that look correct but are hallucinated.
+
 **Example CLAUDE.md rule:**
 ```markdown
 ## Grounding Rules
 - Always read the relevant source files before proposing changes
 - Never suggest code based on assumptions about file structure
 - If a file reference is not provided, ask which files to read
+- If any requirement is ambiguous or the needed information is not
+  in the provided files, stop and ask for clarification — do not guess
+- Never invent interfaces, schemas, or behaviors not explicitly
+  defined in the codebase
 ```
 
 #### Step 2: Plan
@@ -92,6 +98,15 @@ Before committing, list:
 
 **Why:** The worst hallucination is a confident one. A well-calibrated Claude says "I'm 80% confident this is a race condition, but you should verify by running the load test at 100 concurrent requests." That uncertainty signal is invaluable.
 
+**Prompt-level enforcement:**
+```
+If any requirement is ambiguous or you cannot find the needed
+information in the listed files, stop and ask before proceeding.
+Do not guess function signatures, types, or config values.
+```
+
+This single line eliminates the most common source of hallucinations: Claude silently inventing details it does not have.
+
 ### The Golden Rule
 
 > **Never trust "looks right." Prefer file evidence, test output, and explicit uncertainty.**
@@ -102,9 +117,10 @@ Add hooks to auto-run linters and tests after edits. Make verification automatic
 
 ## Anti-Patterns to Watch For
 
-| Anti-Pattern | Better Approach |
-|-------------|-----------------|
-| "Claude said it's fixed, let's ship" | Run the tests, review the diff, check for regressions |
-| Accepting code without file references | Require Claude to cite which files it read |
-| Skipping plan mode for complex changes | Plan first, execute second |
-| Ignoring "I'm not sure about..." | Treat uncertainty as a valuable signal, investigate |
+| Anti-Pattern                           | Better Approach                                         |
+| -------------------------------------- | ------------------------------------------------------- |
+| "Claude said it's fixed, let's ship"   | Run the tests, review the diff, check for regressions   |
+| Accepting code without file references | Require Claude to cite which files it read              |
+| Skipping plan mode for complex changes | Plan first, execute second                              |
+| Ignoring "I'm not sure about..."       | Treat uncertainty as a valuable signal, investigate     |
+| Letting Claude guess missing details   | Instruct Claude to ask when info is missing, not assume |

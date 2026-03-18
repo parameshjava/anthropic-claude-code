@@ -78,12 +78,12 @@ If yes, require a security review flag.
 
 ### Enterprise Pattern: Why Hooks Over CLAUDE.md?
 
-| CLAUDE.md | Hooks |
-|-----------|-------|
-| "Please run lint after editing" | Lint runs automatically after every edit |
-| "Don't delete production data" | `rm` on production paths is blocked with exit 2 |
-| "Run tests before saying done" | Stop hook forces test execution before completion |
-| Advisory — best effort | Guaranteed — deterministic |
+| CLAUDE.md                       | Hooks                                             |
+| ------------------------------- | ------------------------------------------------- |
+| "Please run lint after editing" | Lint runs automatically after every edit          |
+| "Don't delete production data"  | `rm` on production paths is blocked with exit 2   |
+| "Run tests before saying done"  | Stop hook forces test execution before completion |
+| Advisory — best effort          | Guaranteed — deterministic                        |
 
 ### Configuration Scope
 

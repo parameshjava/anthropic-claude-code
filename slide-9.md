@@ -94,6 +94,13 @@ That is 7 lines. It takes 30 seconds to write. And it produces dramatically bett
 
 Use this checklist alongside the six-part formula. Not every prompt needs every item — pick the ones relevant to the task.
 
+#### Ask, Don't Assume
+- The single most effective way to reduce hallucinations: tell Claude to stop and ask when information is missing or requirements are unclear
+- Without this, Claude fills gaps with plausible-sounding but potentially wrong guesses — invented API signatures, assumed column names, made-up config values
+- Example line in prompt: "If any requirement is ambiguous or you cannot find the needed information in the listed files, stop and ask before proceeding. Do not guess."
+- For implementation tasks: "If a function signature, type definition, or config value is not visible in the listed files, ask me for it rather than assuming what it looks like."
+- Add to CLAUDE.md for project-wide enforcement: "When requirements are unclear or necessary context is missing, always ask for clarification before writing code. Never invent interfaces, schemas, or behaviors not explicitly defined in the codebase."
+
 #### Error Handling & Edge Cases
 - Specify how errors should be handled (return error response, throw, log and continue?)
 - Ask Claude to identify and test edge cases (null inputs, empty arrays, max boundaries, concurrent access)

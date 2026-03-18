@@ -42,14 +42,14 @@ This is where Claude Code Security is fundamentally different from traditional t
 
 ### Reasoning vs. Pattern Matching
 
-| Aspect | Traditional SAST | Claude Code Security |
-|--------|-----------------|---------------------|
-| Detection method | Pattern-based matching | Reasoning-based analysis |
-| False positive rate | High — flags "possible" issues | Context-aware — understands if risk is real |
-| Logic bugs | Cannot find (no pattern exists) | Finds by reasoning about data flow |
-| Zero-day vulnerabilities | Misses until rule is updated | Reasons about novel attack vectors |
-| Data flow understanding | Limited to single-file analysis | Cross-file, cross-module understanding |
-| Output quality | Flagged lines, no fixes | Concrete fix code + explanation |
+| Aspect                   | Traditional SAST                | Claude Code Security                        |
+| ------------------------ | ------------------------------- | ------------------------------------------- |
+| Detection method         | Pattern-based matching          | Reasoning-based analysis                    |
+| False positive rate      | High — flags "possible" issues  | Context-aware — understands if risk is real |
+| Logic bugs               | Cannot find (no pattern exists) | Finds by reasoning about data flow          |
+| Zero-day vulnerabilities | Misses until rule is updated    | Reasons about novel attack vectors          |
+| Data flow understanding  | Limited to single-file analysis | Cross-file, cross-module understanding      |
+| Output quality           | Flagged lines, no fixes         | Concrete fix code + explanation             |
 
 ### Integration Options
 
