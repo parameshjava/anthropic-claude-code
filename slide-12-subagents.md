@@ -355,16 +355,121 @@ Never edit files. Report findings only.
 
 Note: no Edit or Write tools — this agent can only read and report, enforcing the principle that an auditor observes but does not modify.
 
-#### The Custom Agent + MCP Connection
+#### Agent vs MCP — They Solve Different Problems
 
-Custom agents often **use MCP connections** as part of their workflow. The relationship:
+A common question: "Should I build an MCP server or a custom agent?" They are not interchangeable — they operate at different layers.
 
-| Layer              | What It Provides                             | Example                                                                     |
-| ------------------ | -------------------------------------------- | --------------------------------------------------------------------------- |
-| **MCP** (slide 13) | Connections to external systems              | JIRA API, Slack API, GitHub API                                             |
-| **Custom Agents**  | Workflows that orchestrate those connections | PR reviewer uses GitHub + JIRA MCP to fetch data, analyze, and post reviews |
+| Aspect                 | MCP Server                                                | Custom Agent                                                                   |
+| ---------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **What it is**         | A connection to an external system                        | A workflow that reasons and acts                                               |
+| **Analogy**            | A USB cable to a device                                   | A person who uses multiple devices                                             |
+| **Does it think?**     | No — it exposes tools, the model decides when to use them | Yes — it has instructions, makes decisions, chains steps                       |
+| **Does it act alone?** | No — it waits to be called by the model or an agent       | Yes — given a task, it works autonomously                                      |
+| **State**              | Stateless tool calls (fetch, create, update)              | Stateful workflow (gather → analyze → decide → act → verify)                   |
+| **Scope**              | One system (JIRA, Slack, Postgres, GitHub)                | Cross-system orchestration (JIRA + GitHub + Slack in one workflow)             |
+| **Who builds it**      | Usually the platform vendor or community                  | Your team, for your specific workflows                                         |
+| **Example**            | JIRA MCP server: `getIssue`, `updateStatus`, `addComment` | PR reviewer agent: fetches PR, reads JIRA ticket, scans codebase, posts review |
 
-MCP provides the **pipes**. Custom agents provide the **brains**. A PR reviewer agent without MCP connections cannot fetch JIRA tickets. MCP connections without a custom agent are just raw tools with no workflow.
+**The key distinction:** MCP servers provide **capabilities** (tools). Agents provide **judgment** (when and how to use those tools).
+
+#### How Agents Use MCP — The Layered Architecture
+
+```
+┌─────────────────────────────────────────────┐
+│              Your Main Session              │
+│         (orchestrator / war room)           │
+├─────────────────────────────────────────────┤
+│                                             │
+│   ┌──────────────────┐  ┌───────────────┐   │
+│   │  PR Review Agent │  │  YIR Agent    │   │
+│   │  (gh-pr-reviewer)│  │ (year-review) │   │
+│   └────────┬─────────┘  └───────┬───────┘   │
+│            │                    │           │
+├────────────┼────────────────────┼───────────┤
+│            ▼                    ▼           │
+│   ┌────────────┐  ┌──────┐  ┌──────┐        │
+│   │ GitHub MCP │  │ JIRA │  │Slack │        │
+│   │   Server   │  │ MCP  │  │ MCP  │        │
+│   └────────────┘  └──────┘  └──────┘        │
+│          MCP Layer (connections)            │
+└─────────────────────────────────────────────┘
+```
+
+Agents sit **above** MCP. They consume MCP tools the same way they consume built-in tools (Bash, Read, Edit). The MCP layer doesn't know or care whether it's being called by your main session or by a subagent.
+
+#### Real Example: PR Review Agent Using MCP
+
+Here's how the `gh-pr-reviewer` agent chains MCP calls into a coherent workflow:
+
+```
+Agent receives: "Review PR #456"
+
+Step 1 — [GitHub MCP] Fetch PR metadata, diff, CI status
+         gh pr view 456 --json title,body,commits,reviews
+         gh pr diff 456
+
+Step 2 — [GitHub MCP] Fetch CLAUDE.md from the repo
+         gh api repos/acme/api/contents/CLAUDE.md
+
+Step 3 — [JIRA MCP] Extract ticket ID from PR title → DX-1234
+         Fetch ticket: summary, acceptance criteria, story points
+         Compare scope: code changes vs acceptance criteria
+
+Step 4 — [Agent reasoning] Analyze: bugs, security, architecture,
+         codebase consistency, duplicate logic, scope alignment
+
+Step 5 — [GitHub MCP] Post review with inline comments
+         gh api repos/acme/api/pulls/456/reviews --method POST
+
+Step 6 — [GitHub GraphQL] Resolve previously addressed threads
+         resolveReviewThread(threadId: "...")
+
+Step 7 — [Slack MCP] (optional) Notify #eng-reviews channel
+         "PR #456 reviewed — 2 critical findings, review posted"
+```
+
+The agent orchestrates 3 external systems (GitHub, JIRA, Slack) through their MCP connections, with reasoning steps in between. No MCP server could do this alone — it takes an agent to chain the calls, compare the results, and make judgment calls.
+
+#### When to Build an MCP Server vs a Custom Agent
+
+| You Need                                          | Build This       | Example                                                            |
+| ------------------------------------------------- | ---------------- | ------------------------------------------------------------------ |
+| Claude to read/write data in an external system   | **MCP Server**   | Postgres MCP server so Claude can query your database              |
+| A repeatable multi-step workflow across systems   | **Custom Agent** | PR reviewer that combines GitHub + JIRA + codebase analysis        |
+| A new tool that any agent or skill can use        | **MCP Server**   | Sentry MCP server — any agent can now fetch error data             |
+| Judgment, analysis, and decision-making           | **Custom Agent** | Security auditor that reads code and decides what's risky          |
+| Simple CRUD operations on an external API         | **MCP Server**   | Notion MCP server to create/update pages                           |
+| Cross-system orchestration with conditional logic | **Custom Agent** | Deploy agent that checks tests → builds → deploys → notifies Slack |
+
+**Often you need both:** Build the MCP server for the connection, then build an agent that uses it intelligently. The JIRA MCP server gives you `getIssue` and `updateStatus`. The PR reviewer agent knows *when* to fetch a ticket, *how* to compare it against code changes, and *what* to do with the findings.
+
+#### Composing Agents + MCP + Skills Together
+
+The full picture — all three layers working together:
+
+```
+You: /review-and-deploy
+     Review PR #456, and if it passes, deploy to staging.
+
+Skill activates: review-and-deploy workflow in your session
+
+  Step 1 — Skill spawns PR Review Agent
+           Agent uses GitHub MCP + JIRA MCP
+           Returns: "2 nits, no blockers. LGTM."
+
+  Step 2 — Skill spawns Deploy Agent
+           Agent uses GitHub MCP (merge PR) + AWS MCP (deploy)
+           + Slack MCP (notify team)
+           Returns: "Merged and deployed to staging. Slack notified."
+
+  Step 3 — Skill reports back to your session:
+           "PR #456 reviewed, merged, deployed to staging.
+            Team notified in #deployments."
+```
+
+- The **skill** provides the methodology (review → decide → deploy → notify)
+- The **agents** provide isolated execution (each runs independently)
+- **MCP** provides the connections (GitHub, JIRA, AWS, Slack)
 
 #### Sharing Custom Agents with Your Team
 

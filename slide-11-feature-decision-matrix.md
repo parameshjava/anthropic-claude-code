@@ -284,6 +284,65 @@ These three features serve different purposes but work together:
 
 Skills provide the **methodology**. Agents provide the **isolation**. MCP provides the **connections**.
 
+#### Real Example: Code Review as a Skill vs. Code Review as an Agent
+
+This project includes code review implemented **both** as a skill (`skills/review.md`) and as an agent (`agents/gh-pr-reviewer.md`). 
+They solve the same problem differently. Understanding when to use which is critical.
+
+**Code Review Skill** (`/review`) — runs inside your main session:
+```
+You: /review
+     Check the changes I just made to src/services/paymentService.ts
+
+Claude: [skill activates in your session]
+  Reviewing against checklist:
+  ✓ Error handling on all async calls
+  ✓ Input validation using Zod schemas
+  ✗ Missing: no test for the refund edge case
+  ✗ Missing: no JSDoc on the new public method
+  ⚠ The retry logic doesn't have a max attempts limit
+
+  Here's what to fix before committing...
+```
+
+**Code Review Agent** (`gh-pr-reviewer`) — runs independently, posts to GitHub:
+```
+You: Review this PR: https://github.com/acme/api/pull/456
+
+Claude: [spawns gh-pr-reviewer agent in isolated context]
+  Agent: Fetches PR diff, reads CLAUDE.md, extracts JIRA ticket,
+         searches codebase for duplicate logic, checks story alignment,
+         posts inline comments with suggestion blocks directly on GitHub,
+         resolves previously addressed threads.
+  Result: Review posted to PR #456 with 4 inline comments.
+```
+
+**When to use which:**
+
+| Aspect             | Skill (`/review`)                                     | Agent (`gh-pr-reviewer`)                                 |
+| ------------------ | ----------------------------------------------------- | -------------------------------------------------------- |
+| **Context**        | Runs in your session — sees your conversation history | Runs isolated — only sees what you give it               |
+| **Output**         | Feedback to you in the terminal                       | Posts inline comments directly on GitHub PR              |
+| **Scope**          | Reviews your local uncommitted changes                | Reviews any PR (yours or a teammate's)                   |
+| **Speed**          | Instant — no external API calls needed                | Slower — fetches PR, JIRA ticket, scans codebase         |
+| **Integration**    | None — you act on the feedback manually               | Posts to GitHub, resolves threads, checks JIRA alignment |
+| **Best for**       | Quick self-review before committing                   | Formal PR review that teammates can see                  |
+| **Typical moment** | "Let me check my work before I push"                  | "Review PR #456 before we merge"                         |
+
+**The pattern generalizes:**
+
+| Task              | Use a Skill When                                                         | Use an Agent When                                                                    |
+| ----------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| **Code review**   | Self-checking local changes before commit                                | Reviewing a PR on GitHub with inline comments                                        |
+| **Testing**       | TDD workflow guiding your implementation (`/test-driven-development`)    | Running the full test suite and summarizing failures independently                   |
+| **Debugging**     | Systematic root-cause analysis in your session (`/systematic-debugging`) | Investigating logs, metrics, and queries in parallel without cluttering your context |
+| **Documentation** | Generating docs alongside your code changes (`/update-docs`)             | Scanning an entire repo and producing a standalone doc report                        |
+| **Security**      | Checking your changes against OWASP rules before pushing                 | Scanning a PR for vulnerabilities and posting findings to GitHub                     |
+
+**Rule of thumb:**
+- **Skill** = you're the audience, feedback stays in your session, guides your work in real-time
+- **Agent** = others are the audience (or the output is external), runs independently, posts results somewhere
+
 ### 4. MCP — External Connections
 
 **Loads:** Tool definitions at session start

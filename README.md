@@ -68,32 +68,37 @@ Six steps to prevent hallucinations: **Ground** (read actual code, ask don't ass
 
 ```
 anthropic-claude-code/
-├── README.md                              ← You are here
-├── slide-1-enterprise-intro.md            ← Chapter 1: Introduction
-├── slide-2-models-by-plan.md              ← Chapter 2: Models by Plan
-├── slide-3-model-selection.md             ← Chapter 3: Model Selection
-├── slide-4-epic-decomposition.md          ← Chapter 4: Epic Decomposition
-├── slide-5-session-overview.md            ← Chapter 5: Session Overview
-├── slide-6-operating-model.md             ← Chapter 6: Operating Model
-├── slide-7-context-engineering.md         ← Chapter 7: Context Engineering
-├── slide-8-manage-context.md              ← Chapter 8: Manage Context
-├── slide-9-prompt-formula.md              ← Chapter 9: Prompt Formula
-├── slide-10-reduce-hallucinations.md      ← Chapter 10: Reduce Hallucinations
-├── slide-11-feature-decision-matrix.md    ← Chapter 11: Feature Decision Matrix
-├── slide-12-subagents.md                  ← Chapter 12: Subagents
-├── slide-13-mcp.md                        ← Chapter 13: MCP
-├── slide-14-enterprise-deployment.md      ← Chapter 14: Enterprise Deployment
-├── slide-15-scaling-teams.md              ← Chapter 15: Scaling Teams
-├── slide-16-hooks.md                      ← Chapter 16: Hooks
-├── slide-17-github-actions.md             ← Chapter 17: GitHub Actions
-├── slide-18-security.md                   ← Chapter 18: Security
-├── slide-19-reference-faq.md              ← Chapter 19: Reference & FAQ
-├── .claude/
-│   ├── agents/            ← Custom agent definitions
-│   │   ├── gh-pr-reviewer.md
-│   │   └── year-in-review.md
-│   └── settings.json      ← Claude Code configuration
-└── CLAUDE.md              ← Project-level Claude instructions
+├── README.md                                   ← You are here
+├── slide-1-enterprise-intro.md                 ← Chapter 1: Introduction
+├── slide-2-models-by-plan.md                   ← Chapter 2: Models by Plan
+├── slide-3-model-selection.md                  ← Chapter 3: Model Selection
+├── slide-4-epic-decomposition.md               ← Chapter 4: Epic Decomposition
+├── slide-5-session-overview.md                 ← Chapter 5: Session Overview
+├── slide-6-operating-model.md                  ← Chapter 6: Operating Model
+├── slide-7-context-engineering.md              ← Chapter 7: Context Engineering
+├── slide-8-manage-context.md                   ← Chapter 8: Manage Context
+├── slide-9-prompt-formula.md                   ← Chapter 9: Prompt Formula
+├── slide-10-reduce-hallucinations.md           ← Chapter 10: Reduce Hallucinations
+├── slide-11-feature-decision-matrix.md         ← Chapter 11: Feature Decision Matrix
+├── slide-12-subagents.md                       ← Chapter 12: Subagents
+├── slide-13-mcp.md                             ← Chapter 13: MCP
+├── slide-14-enterprise-deployment.md           ← Chapter 14: Enterprise Deployment
+├── slide-15-scaling-teams.md                   ← Chapter 15: Scaling Teams
+├── slide-16-hooks.md                           ← Chapter 16: Hooks
+├── slide-17-github-actions.md                  ← Chapter 17: GitHub Actions
+├── slide-18-security.md                        ← Chapter 18: Security
+├── slide-19-reference-faq.md                   ← Chapter 19: Reference & FAQ
+├── agents/                                     ← Custom agent definitions
+│   ├── gh-pr-reviewer.md                       ← PR review agent (Sonnet, posts to GitHub)
+│   └── year-in-review.md                       ← Employee YIR generator (Sonnet, GitHub + JIRA)
+├── skills/                                     ← Skill definitions
+│   ├── review.md                               ← Code review checklist skill
+│   ├── sec-review.md                           ← Security review checklist skill
+│   └── update-docs.md                          ← Documentation update skill
+├── samples/                                    ← Example outputs
+│   └── sample-year-in-review.md                ← Sample YIR report (anonymized)
+├── Claude_Code_Agentic_Engineering_Session.pptx ← Slide decks
+└── CLAUDE.md                                   ← Project-level Claude instructions
 ```
 
 ## Custom Agents Included
@@ -103,7 +108,7 @@ This project includes two production-ready custom agents as real-world examples:
 - **gh-pr-reviewer** — Reviews GitHub PRs with inline comments, JIRA ticket alignment, codebase consistency checks, and suggestion blocks. Posts directly to GitHub.
 - **year-in-review** — Generates employee performance reviews by aggregating data from GitHub, JIRA, and email. Produces balanced, manager-ready reports.
 
-Both are covered in detail in [Chapter 12](slide-12.md).
+Both are covered in detail in [Chapter 12](slide-12-subagents.md). Agent definitions are in the [`agents/`](agents/) folder.
 
 ## Skills Marketplace
 
