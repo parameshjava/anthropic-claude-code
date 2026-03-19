@@ -330,3 +330,19 @@ With MCP servers for JIRA and Slack configured, Claude executes this directly. N
 | Multi-step repeatable workflow? | Skills            |
 | External system integration?    | MCP               |
 | Must happen, no exceptions?     | Hooks             |
+
+---
+
+## Useful Links
+
+- [Claude Code Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory)
+- [Claude Code Skills (Slash Commands)](https://code.claude.com/docs/en/slash-commands)
+- [Claude Code Hooks Guide](https://code.claude.com/docs/en/hooks-guide)
+- [Claude Code Hooks Reference](https://code.claude.com/docs/en/hooks)
+- [Claude Code Plugins Announcement](https://www.anthropic.com/news/claude-code-plugins)
+- [Anthropic Official Skills Repository](https://github.com/anthropics/skills)
+- [Agent Skills Specification](https://agentskills.io)
+- [Skills Engineering Blog](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+- [Superpowers Framework](https://github.com/obra/superpowers)
+- [Awesome Agent Skills Directory](https://github.com/VoltAgent/awesome-agent-skills)
+- [MCP Official Site](https://modelcontextprotocol.io)

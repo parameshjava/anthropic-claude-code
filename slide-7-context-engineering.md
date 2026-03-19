@@ -473,3 +473,13 @@ claude -w feature-auth --model opus \
 ## Key Takeaway
 
 Context engineering is like database indexing — the goal is not to load everything, but to load exactly what is needed, exactly when it is needed. Train your teams to think in terms of **always-on, on-demand, and external** tiers, and use these commands to keep context lean throughout the day.
+
+---
+
+## Useful Links
+
+- [Claude Code Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory)
+- [Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Claude Code Skills (Slash Commands)](https://code.claude.com/docs/en/slash-commands)
+- [Claude Code Hooks](https://code.claude.com/docs/en/hooks)

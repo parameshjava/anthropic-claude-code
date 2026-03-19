@@ -64,3 +64,13 @@ Reference @docs/requirements.md and @src/workflows/.
 ## Key Takeaway
 
 The model selection is not a one-time decision — it is a per-task decision. Train your engineers to ask: "Is this a Haiku task, a Sonnet task, or an Opus task?" before they start typing.
+
+---
+
+## Useful Links
+
+- [Choosing a Model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)
+- [All Claude Models Overview](https://platform.claude.com/docs/en/about-claude/models/all-models)
+- [Claude Code Model Configuration](https://code.claude.com/docs/en/model-config)
+- [API Pricing (Token-Level)](https://platform.claude.com/docs/en/about-claude/pricing)
+- [Enabling Claude Code to Work More Autonomously](https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously)

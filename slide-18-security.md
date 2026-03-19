@@ -100,3 +100,13 @@ including projects they are not a member of.
 ```
 
 No SAST tool would find this because there is no "pattern" for project-scoped authorization logic. Claude found it by reasoning about the business logic.
+
+---
+
+## Useful Links
+
+- [Claude Code Security Documentation](https://code.claude.com/docs/en/security)
+- [Claude Code Security Blog Post](https://www.anthropic.com/news/claude-code-security)
+- [Claude Code Sandboxing](https://www.anthropic.com/engineering/claude-code-sandboxing)
+- [Claude Code Security Review Action](https://github.com/anthropics/claude-code-security-review)
+- [Claude Code Hooks Reference](https://code.claude.com/docs/en/hooks)

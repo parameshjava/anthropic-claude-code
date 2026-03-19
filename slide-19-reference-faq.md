@@ -76,3 +76,24 @@ For further assistance, the following areas are available for inquiry:
 - **Technical integration** — connecting to a specific tool stack
 - **Security and compliance** — meeting governance requirements
 - **Workflow optimization** — making Claude Code fit an engineering culture
+
+---
+
+## Useful Links
+
+- [Claude Code — Product Page](https://claude.com/product/claude-code)
+- [Claude Code — Official Documentation](https://code.claude.com/docs/en/overview)
+- [Claude Code — GitHub Repository](https://github.com/anthropics/claude-code)
+- [Anthropic API Documentation](https://platform.claude.com/docs/en/api/overview)
+- [Anthropic Plans and Pricing](https://claude.com/pricing)
+- [Claude Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Model Context Protocol — Official Site](https://modelcontextprotocol.io)
+- [MCP Server Registry](https://registry.modelcontextprotocol.io/)
+- [Anthropic Official Skills Repository](https://github.com/anthropics/skills)
+- [Agent Skills Specification](https://agentskills.io)
+- [Claude Code GitHub Action](https://github.com/anthropics/claude-code-action)
+- [Claude Code Security Documentation](https://code.claude.com/docs/en/security)
+- [Claude on AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-claude.html)
+- [Claude on Google Vertex AI](https://platform.claude.com/docs/en/api/claude-on-vertex-ai)

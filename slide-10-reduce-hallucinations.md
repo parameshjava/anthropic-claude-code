@@ -124,3 +124,13 @@ Add hooks to auto-run linters and tests after edits. Make verification automatic
 | Skipping plan mode for complex changes | Plan first, execute second                              |
 | Ignoring "I'm not sure about..."       | Treat uncertainty as a valuable signal, investigate     |
 | Letting Claude guess missing details   | Instruct Claude to ask when info is missing, not assume |
+
+---
+
+## Useful Links
+
+- [Claude Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Claude Code Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory)
+- [Claude Code Hooks](https://code.claude.com/docs/en/hooks)
+- [Claude Code Security](https://code.claude.com/docs/en/security)

@@ -220,3 +220,14 @@ For modules that need additional context, add a CLAUDE.md inside the directory:
 | No "do not scan" directives                  | Claude wastes tokens exploring node_modules | Always include explicit exclusions                               |
 | Updating CLAUDE.md without PR review         | Bad instructions affect the whole team      | Treat CLAUDE.md changes like code changes                        |
 | One massive CLAUDE.md (300+ lines)           | Dilutes signal, burns context budget        | Split into root CLAUDE.md + directory-level files + scoped rules |
+
+---
+
+## Useful Links
+
+- [Claude Code — Official Documentation](https://code.claude.com/docs/en/overview)
+- [Claude Code Sub-Agents](https://code.claude.com/docs/en/sub-agents)
+- [Claude Code Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory)
+- [Building Agents with the Claude Agent SDK](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk)
+- [Agent SDK Overview](https://platform.claude.com/docs/en/agent-sdk/overview)
+- [Claude Code Sandboxing](https://www.anthropic.com/engineering/claude-code-sandboxing)

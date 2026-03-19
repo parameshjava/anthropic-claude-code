@@ -129,3 +129,14 @@ jobs:
 ```
 
 Every PR gets reviewed. Every `@claude` mention gets a response. All automated. All auditable.
+
+---
+
+## Useful Links
+
+- [Claude Code GitHub Action](https://github.com/anthropics/claude-code-action)
+- [GitHub Action Setup Guide](https://github.com/anthropics/claude-code-action/blob/main/docs/setup.md)
+- [GitHub Action Usage Guide](https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md)
+- [Claude Code Base Action](https://github.com/anthropics/claude-code-base-action)
+- [Claude Code Security Review Action](https://github.com/anthropics/claude-code-security-review)
+- [Claude Code — GitHub Repository](https://github.com/anthropics/claude-code)

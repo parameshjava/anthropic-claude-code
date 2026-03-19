@@ -15,25 +15,25 @@ This guide is structured as 19 chapters, each covering a key aspect of using Cla
 
 ## Table of Contents
 
-| Chapter | Title                                                       | What It Covers                                                                                              |
-| ------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| 1       | [Claude Code for Enterprise Engineering](slide-1-enterprise-intro.md)        | Introduction — what Claude Code is and why it matters for enterprise teams                                  |
-| 2       | [Claude Code Models by Plan](slide-2-models-by-plan.md)                      | Pro, Max, Team, and Enterprise plans — what each unlocks                                                    |
-| 3       | [Which Model for Which Task?](slide-3-model-selection.md)                    | Sonnet for daily work, Opus for complexity, Haiku for speed — model selection guide                         |
-| 4       | [Epic Decomposition & Cheat Sheet](slide-4-epic-decomposition.md)            | Converting JIRA/Rally epics into Claude-ready stories with a task-to-model map                              |
-| 5       | [What This Session Covers](slide-5-session-overview.md)                      | Six pillars for deploying Claude Code effectively                                                           |
-| 6       | [Claude Code Operating Model](slide-6-operating-model.md)                    | How Claude Code works — tools, memory, delegation, agent teams, verification loop                           |
-| 7       | [Context Engineering](slide-7-context-engineering.md)                        | Load only what the task needs — CLAUDE.md, rules, @ references, and context hierarchy                       |
-| 8       | [Manage Context — Avoid Limits](slide-8-manage-context.md)                   | Stop Claude from scanning everything — force specific file paths and manage token budgets                   |
-| 9       | [Prompt Formula for Claude Code](slide-9-prompt-formula.md)                  | Six-part prompt formula (Goal, Files, Constraints, Scope, Validation, Output) with best practices checklist |
-| 10      | [Reduce Hallucinations and Unsafe Edits](slide-10-reduce-hallucinations.md)  | Six-step trust pipeline — Ground, Plan, Evidence, Validate, Review, Escalate                                |
-| 11      | [Which Feature Solves Which Problem?](slide-11-feature-decision-matrix.md)   | CLAUDE.md vs Rules vs Skills vs MCP vs Hooks — decision matrix with skills marketplace guide                |
+| Chapter | Title                                                                       | What It Covers                                                                                              |
+| ------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1       | [Claude Code for Enterprise Engineering](slide-1-enterprise-intro.md)       | Introduction — what Claude Code is and why it matters for enterprise teams                                  |
+| 2       | [Claude Code Models by Plan](slide-2-models-by-plan.md)                     | Pro, Max, Team, and Enterprise plans — what each unlocks                                                    |
+| 3       | [Which Model for Which Task?](slide-3-model-selection.md)                   | Sonnet for daily work, Opus for complexity, Haiku for speed — model selection guide                         |
+| 4       | [Epic Decomposition & Cheat Sheet](slide-4-epic-decomposition.md)           | Converting JIRA/Rally epics into Claude-ready stories with a task-to-model map                              |
+| 5       | [What This Session Covers](slide-5-session-overview.md)                     | Six pillars for deploying Claude Code effectively                                                           |
+| 6       | [Claude Code Operating Model](slide-6-operating-model.md)                   | How Claude Code works — tools, memory, delegation, agent teams, verification loop                           |
+| 7       | [Context Engineering](slide-7-context-engineering.md)                       | Load only what the task needs — CLAUDE.md, rules, @ references, and context hierarchy                       |
+| 8       | [Manage Context — Avoid Limits](slide-8-manage-context.md)                  | Stop Claude from scanning everything — force specific file paths and manage token budgets                   |
+| 9       | [Prompt Formula for Claude Code](slide-9-prompt-formula.md)                 | Six-part prompt formula (Goal, Files, Constraints, Scope, Validation, Output) with best practices checklist |
+| 10      | [Reduce Hallucinations and Unsafe Edits](slide-10-reduce-hallucinations.md) | Six-step trust pipeline — Ground, Plan, Evidence, Validate, Review, Escalate                                |
+| 11      | [Which Feature Solves Which Problem?](slide-11-feature-decision-matrix.md)  | CLAUDE.md vs Rules vs Skills vs MCP vs Hooks — decision matrix with skills marketplace guide                |
 | 12      | [Subagents — Isolate, Specialize, Parallelize](slide-12-subagents.md)       | Built-in agents, custom agents, parallel execution patterns, and agent teams                                |
 | 13      | [MCP — Connect to Every Tool](slide-13-mcp.md)                              | Model Context Protocol — GitHub, JIRA, Slack, databases, and 3,000+ community servers                       |
-| 14      | [Enterprise Deployment and Governance](slide-14-enterprise-deployment.md)    | Anthropic Cloud, AWS Bedrock, Google Vertex AI, Microsoft Foundry deployment options                        |
-| 15      | [Scaling Claude Code Across Teams](slide-15-scaling-teams.md)                | Standardize inputs so Claude Code scales beyond one person                                                  |
-| 16      | [Hooks — Automate the Agent Lifecycle](slide-16-hooks.md)                    | Deterministic lifecycle triggers — PostToolUse, PreToolUse, Stop hooks                                      |
-| 17      | [GitHub Actions — Claude in CI/CD](slide-17-github-actions.md)               | Automated PR reviews, test generation, and issue-to-PR workflows                                            |
+| 14      | [Enterprise Deployment and Governance](slide-14-enterprise-deployment.md)   | Anthropic Cloud, AWS Bedrock, Google Vertex AI, Microsoft Foundry deployment options                        |
+| 15      | [Scaling Claude Code Across Teams](slide-15-scaling-teams.md)               | Standardize inputs so Claude Code scales beyond one person                                                  |
+| 16      | [Hooks — Automate the Agent Lifecycle](slide-16-hooks.md)                   | Deterministic lifecycle triggers — PostToolUse, PreToolUse, Stop hooks                                      |
+| 17      | [GitHub Actions — Claude in CI/CD](slide-17-github-actions.md)              | Automated PR reviews, test generation, and issue-to-PR workflows                                            |
 | 18      | [Claude Code Security](slide-18-security.md)                                | Reasoning-based vulnerability scanning that finds zero-days traditional tools miss                          |
 | 19      | [Reference & FAQ](slide-19-reference-faq.md)                                | Summary, resources, and frequently asked questions                                                          |
 

@@ -53,3 +53,13 @@ This is not about cost alone — it is about matching model strength to task com
 | Refactor monolith to microservices   | Opus 4.6   | Cross-cutting architecture |
 | Summarize 200 test failures          | Haiku 4.5  | Speed + parallelism        |
 | Debug a race condition in async code | Opus 4.6   | Deep reasoning required    |
+
+---
+
+## Useful Links
+
+- [Anthropic Plans and Pricing](https://claude.com/pricing)
+- [API Pricing (Token-Level)](https://platform.claude.com/docs/en/about-claude/pricing)
+- [Claude Code for Team and Enterprise](https://www.anthropic.com/news/claude-code-on-team-and-enterprise)
+- [All Claude Models Overview](https://platform.claude.com/docs/en/about-claude/models/all-models)
+- [Claude Code Model Configuration](https://code.claude.com/docs/en/model-config)
