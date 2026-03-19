@@ -49,3 +49,12 @@ This pillar ensures IT and security teams can deploy Claude Code with the same g
 ## Key Takeaway
 
 These six pillars are not optional — they are the minimum for responsible enterprise adoption. Skip any one of them and you get either a tool that underperforms (missing context/prompting) or a tool that cannot pass your security review (missing governance/verification).
+
+---
+
+## Useful Links
+
+- [Claude Code — Official Documentation](https://code.claude.com/docs/en/overview)
+- [Claude Code — Product Page](https://claude.com/product/claude-code)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [How Anthropic Teams Use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code)

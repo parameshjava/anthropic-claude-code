@@ -89,3 +89,12 @@ This level of structured decomposition — with dependencies, risks, compliance 
 ## Key Takeaway
 
 Epic decomposition is where Opus pays for itself. The cost of one Opus session is a fraction of the engineering hours saved on story writing, risk identification, and dependency mapping.
+
+---
+
+## Useful Links
+
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Choosing a Model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)
+- [Claude Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [Enabling Claude Code to Work More Autonomously](https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously)

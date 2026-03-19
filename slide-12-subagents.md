@@ -588,6 +588,12 @@ Claude: Integration tests finished — 142/142 passing ✓
 | Using a single agent for unrelated tasks     | One agent per concern — easier to parallelize and debug           |
 | Forgetting to synthesize results             | The orchestrator must combine findings into actionable next steps |
 
-## Useful Links 
+## Useful Links
 
-- [How to write a great agents.md](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
+- [Claude Code Sub-Agents Documentation](https://code.claude.com/docs/en/sub-agents)
+- [Subagents in the SDK](https://platform.claude.com/docs/en/agent-sdk/subagents)
+- [Building Agents with the Claude Agent SDK](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk)
+- [Agent SDK Overview](https://platform.claude.com/docs/en/agent-sdk/overview)
+- [Enabling Claude Code to Work More Autonomously](https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously)
+- [How to Write a Great agents.md](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)

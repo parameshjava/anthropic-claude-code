@@ -22,3 +22,15 @@ Claude Code is best understood as a senior engineer who just joined your team. T
 Claude Code is Anthropic's official CLI-based agentic coding tool. It goes beyond autocomplete — it reads, writes, plans, tests, and verifies code. Enterprise adoption requires deliberate context engineering, not just "plug and play." The four pillars (Context, Prompting, Delegation, MCP) form the foundation of effective usage.
 
 By the end of this guide, every engineering team in your organization will have a clear playbook for adopting Claude Code — from the first prompt to enterprise-wide governance.
+
+---
+
+## Useful Links
+
+- [Claude Code — Product Page](https://claude.com/product/claude-code)
+- [Claude Code — Official Documentation](https://code.claude.com/docs/en/overview)
+- [Claude Code — GitHub Repository](https://github.com/anthropics/claude-code)
+- [How Anthropic Teams Use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code)
+- [Claude Code for Team and Enterprise](https://www.anthropic.com/news/claude-code-on-team-and-enterprise)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Code with Claude — Developer Conference](https://www.anthropic.com/news/Introducing-code-with-claude)

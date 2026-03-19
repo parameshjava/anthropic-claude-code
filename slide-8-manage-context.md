@@ -138,3 +138,12 @@ Have each engineer run `/context` in their next Claude Code session. Examine wha
 3. Are there MCP servers consuming context that are not being used?
 
 This five-minute exercise typically reveals 30-50% context savings.
+
+---
+
+## Useful Links
+
+- [Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Claude Code Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [All Claude Models Overview (Context Windows)](https://platform.claude.com/docs/en/about-claude/models/all-models)

@@ -459,3 +459,14 @@ Read @src/shared/types/project.ts for the Project type definition.
 ---
 
 Each example follows the same formula: **Goal** (what and why), **Files** (exactly where to look), **Constraints** (what not to touch), **Scope** (what not to scan), **Validation** (how to prove it works), and **Output** (how to structure the response). Adapt this pattern to any engineering task.
+
+---
+
+## Useful Links
+
+- [Claude Prompt Engineering Overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [Claude 4 Prompt Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
+- [Multishot Prompting](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/multishot-prompting)
+- [Prompt Generator](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompt-generator)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)

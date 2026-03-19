@@ -82,3 +82,16 @@ For organizations with strict data residency requirements, Bedrock, Vertex, and 
 ## Key Message for Leadership
 
 Claude Code meets enterprise security and governance requirements out of the box. SSO, audit logs, spend controls, data residency, and zero training on your data. The question is not "is it secure enough?" — it is "how fast can we deploy it?"
+
+---
+
+## Useful Links
+
+- [Claude Code for Team and Enterprise](https://www.anthropic.com/news/claude-code-on-team-and-enterprise)
+- [Anthropic Plans and Pricing](https://claude.com/pricing)
+- [Claude on AWS Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-claude.html)
+- [Claude on Google Vertex AI](https://platform.claude.com/docs/en/api/claude-on-vertex-ai)
+- [Google Cloud Model Garden — Claude](https://cloud.google.com/products/model-garden/claude)
+- [Claude Code Security](https://code.claude.com/docs/en/security)
+- [Claude Code Sandboxing](https://www.anthropic.com/engineering/claude-code-sandboxing)
+- [Anthropic API Getting Started](https://platform.claude.com/docs/en/api/getting-started)

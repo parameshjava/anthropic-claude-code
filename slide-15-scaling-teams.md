@@ -93,3 +93,14 @@ Scaling Claude Code is not about giving everyone access and hoping for the best.
 | 3    | Configure MCP integrations, create custom agents         |
 | 4    | Team-wide workshop, full rollout                         |
 | 5+   | Iterate based on feedback, add skills as patterns emerge |
+
+---
+
+## Useful Links
+
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Claude Code Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory)
+- [How Anthropic Teams Use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code)
+- [Claude Code for Team and Enterprise](https://www.anthropic.com/news/claude-code-on-team-and-enterprise)
+- [Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Claude Code Plugins Announcement](https://www.anthropic.com/news/claude-code-plugins)

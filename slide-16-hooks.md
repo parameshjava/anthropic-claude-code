@@ -129,3 +129,13 @@ If a PreToolUse hook blocks `rm -rf`, it blocks it for the main agent AND every 
 ```
 
 This configuration logs every session, blocks unsafe commands, auto-formats every edit, and prevents completion without verification. All deterministic. All guaranteed.
+
+---
+
+## Useful Links
+
+- [Claude Code Hooks Guide (Getting Started)](https://code.claude.com/docs/en/hooks-guide)
+- [Claude Code Hooks Reference](https://code.claude.com/docs/en/hooks)
+- [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
+- [Claude Code Security](https://code.claude.com/docs/en/security)
+- [Claude Code Sandboxing](https://www.anthropic.com/engineering/claude-code-sandboxing)
