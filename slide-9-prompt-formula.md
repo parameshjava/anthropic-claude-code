@@ -69,14 +69,14 @@ That is 7 lines. It takes 30 seconds to write. And it produces dramatically bett
 
 ### The Prompt Skeleton Quick Reference
 
-| Letter | Principle | Example |
-|--------|-----------|---------|
-| **A** | Plan first | Use `/plan` to map approach before writing code |
-| **B** | Pin your files | `@` references keep context focused |
-| **C** | Demand proof | Tests, lint, or type-check must pass |
-| **D** | Guard scope | "Do not scan" saves tokens and prevents drift |
-| **E** | Reuse patterns | Store reusable prompts in skills or CLAUDE.md |
-| **F** | Batch smartly | Subagents and `/batch` for multi-file operations |
+| Letter | Principle      | Example                                          |
+| ------ | -------------- | ------------------------------------------------ |
+| **A**  | Plan first     | Use `/plan` to map approach before writing code  |
+| **B**  | Pin your files | `@` references keep context focused              |
+| **C**  | Demand proof   | Tests, lint, or type-check must pass             |
+| **D**  | Guard scope    | "Do not scan" saves tokens and prevents drift    |
+| **E**  | Reuse patterns | Store reusable prompts in skills or CLAUDE.md    |
+| **F**  | Batch smartly  | Subagents and `/batch` for multi-file operations |
 
 ### When to Use Plan Mode
 

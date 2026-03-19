@@ -587,3 +587,7 @@ Claude: Integration tests finished — 142/142 passing ✓
 | Not providing enough context to the agent    | Include relevant file paths, constraints, and expected output     |
 | Using a single agent for unrelated tasks     | One agent per concern — easier to parallelize and debug           |
 | Forgetting to synthesize results             | The orchestrator must combine findings into actionable next steps |
+
+## Useful Links 
+
+- [How to write a great agents.md](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
