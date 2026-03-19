@@ -80,6 +80,24 @@ Collect:
 - PR titles and links (for theme extraction)
 - Size distribution (look at additions/deletions via individual PR details if needed)
 
+**Classify PRs by significance** — not all PRs are equal. For each PR, fetch the size:
+```bash
+gh api repos/{owner}/{repo}/pulls/{number} --jq '{title, additions, deletions, changed_files}'
+```
+
+Categorize into:
+- **Major** (additions+deletions > 200 OR changed_files > 5): Feature builds, architectural changes, new modules
+- **Medium** (additions+deletions 50-200): Bug fixes, meaningful enhancements, test additions
+- **Minor** (additions+deletions < 50 AND changed_files <= 2): Config changes, version bumps, typo fixes, CI tweaks, dependency updates, README edits
+
+**Rules for the report:**
+- Only **Major** and **Medium** PRs should appear in the "Key contributions" section
+- **Minor PRs** are counted in "By the numbers" but NOT highlighted individually
+- If the title matches common minor patterns, auto-classify as Minor:
+  - `bump`, `update version`, `fix typo`, `chore:`, `ci:`, `docs:` (without substantial content), `merge branch`, `update README`, `config change`, `dependency update`, `renovate`, `dependabot`
+- When sampling PRs for theme extraction, skip Minor PRs — they add noise to the narrative
+- In "By the numbers", report PRs as: `PRs authored (merged): 272 (Major: 45, Medium: 98, Minor: 129)`
+
 ### B) Code Reviews Performed
 
 ```bash
@@ -246,7 +264,8 @@ Don't say "outstanding" or "exceptional" — just describe what happened.>
 
 <3-6 bullet points of specific, notable things they did. Each should be one sentence
 with a link to the PR/ticket where relevant. Pick things that had real impact,
-not just high volume.>
+not just high volume. Only include Major and Medium PRs here — exclude config changes,
+version bumps, typo fixes, dependency updates, and other minor work.>
 
 ## How they work with the team
 
@@ -263,7 +282,7 @@ would help the team"). Never make it personal or harsh — frame as growth oppor
 
 ## By the numbers
 
-- PRs authored (merged): <N>
+- PRs authored (merged): <N> (Major: X, Medium: Y, Minor: Z)
 - PRs reviewed: <N>
 - Jira tickets completed: <N> (Stories: X, Bugs: Y, Tasks: Z)
 - Story points delivered: <N> (if available)
