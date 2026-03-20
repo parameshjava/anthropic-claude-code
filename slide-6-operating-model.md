@@ -6,7 +6,9 @@
 
 Claude Code is not a chatbot — it is an **agent** with four core capabilities.
 
+---
 ### C — Context
+---
 
 Context is how Claude understands your project. It comes from:
 
@@ -15,7 +17,9 @@ Context is how Claude understands your project. It comes from:
 - **@ file references** — explicit pointers to specific files. Instead of saying "fix the auth bug," say "fix the auth bug in @src/auth/handler.ts."
 - **/context** — a diagnostic command that shows exactly what is loaded in the current session and how much context budget is being used.
 
+---
 ### T — Tools
+---
 
 Claude Code has access to powerful tools:
 
@@ -25,13 +29,17 @@ Claude Code has access to powerful tools:
 - **Hooks** — deterministic shell and HTTP triggers at lifecycle events
 - **MCP** — external tool integration via the Model Context Protocol
 
+---
 ### M — Memory
+---
 
 Claude Code has an **auto memory** system. It writes timestamped notes between sessions — things like preferences, project decisions, and feedback. When a new session starts, relevant memories are loaded automatically.
 
 Custom memory directories are also supported. Explicitly tell Claude to remember things: "Remember that our staging environment uses port 3001" — and it will recall that in future sessions.
 
+---
 ### D — Delegation
+---
 
 This is the orchestration layer. Claude Code can spawn:
 
@@ -39,7 +47,9 @@ This is the orchestration layer. Claude Code can spawn:
 - **Custom agents** — defined in `.claude/agents/*.md` with scoped tools, specific models, and custom hooks
 - **Agent Teams** — multiple agents collaborating across git worktrees for cross-module work
 
+---
 ### The Verification Loop
+---
 
 The most important mental model:
 
