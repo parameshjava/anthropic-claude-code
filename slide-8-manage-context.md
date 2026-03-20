@@ -116,17 +116,53 @@ You: Fix the typo in the error message in @src/middleware/errorHandler.ts
 
 **MCP disconnection** is equally important. Every connected MCP server loads its tool schemas into context — even if it is never used. If 10 MCP servers are connected but only GitHub and Slack are needed for the current task, disconnect the other 8 with `/mcp`.
 
-### Enterprise Tip: Sparse Checkout
+### Enterprise Tip: Sparse Checkout for Monorepos
 
-For large monorepos, use `worktree.sparsePaths` in the Claude Code configuration. This tells Claude to check out only the directories relevant to the task via git sparse-checkout. If the monorepo has 50 services but work is focused on the billing service, Claude only sees the billing directory.
+For large monorepos, `worktree.sparsePaths` tells Claude to check out only the directories relevant to the task via git sparse-checkout. If the monorepo has 5-10 modules but work is focused on the one module (billing service), Claude only sees the billing directory — not all 5-10 modules.
+
+**Where to add it depends on who needs it:**
+
+**Option A: Personal settings (recommended for individual work)**
+Use `~/.claude/settings.json` when different developers work on different services. Each developer configures their own sparse paths — no commits needed, no conflicts with teammates.
 
 ```json
+// ~/.claude/settings.json (per-developer, NOT committed)
 {
   "worktree": {
     "sparsePaths": ["services/billing/", "libs/shared/", "configs/"]
   }
 }
 ```
+
+When you switch to a different service, just update your personal settings:
+
+```json
+// Switching to the payments service — just edit your local file
+{
+  "worktree": {
+    "sparsePaths": ["services/payments/", "libs/shared/", "configs/"]
+  }
+}
+```
+
+No commit, no PR, no impact on other developers.
+
+**Option B: Project settings (for shared paths the whole team uses)**
+Use `.claude/settings.json` (in the repo root, committed) only for paths that **every** developer on the project needs — like shared libraries or configs:
+
+```json
+// .claude/settings.json (committed — affects everyone)
+{
+  "permissions": {
+    "allow": ["Bash(npm test)", "Bash(npm run build)"]
+  },
+  "worktree": {
+    "sparsePaths": ["libs/shared/", "configs/"]
+  }
+}
+```
+
+**How they combine:** Personal settings merge with project settings. If the project config includes `libs/shared/` and your personal config adds `services/billing/`, Claude sees both. This way the team commits shared paths, and each developer adds their service-specific paths locally.
 
 ---
 

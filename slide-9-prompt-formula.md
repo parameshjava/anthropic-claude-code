@@ -32,8 +32,7 @@ What should Claude **not** touch? Constraints prevent scope creep. Without this,
 #### 4. Scope
 ```
 Do not scan the full project — only read listed files
-Do not scan entire RFC — scan only section 4:
-https://datatracker.ietf.org/doc/html/rfc7519#section-4
+Do not scan entire RFC — scan only section 4: https://datatracker.ietf.org/doc/html/rfc7519#section-4
 ```
 Scope controls what Claude is allowed to explore. This is different from constraints (what not to change) — scope is about what not to **read**. This saves context and prevents Claude from going down rabbit holes.
 
@@ -54,8 +53,7 @@ Tell Claude how to structure its response. "Root cause first" means Claude expla
 Putting it all together:
 
 ```
-Fix the user auth bug by aligning claims in JWT token
-as per RFC-7519 section 4.
+Fix the user auth bug by aligning claims in JWT token as per RFC-7519 section 4.
 
 Read @src/auth/handler.ts and @src/api/session.ts.
 Do not change token format or middleware.

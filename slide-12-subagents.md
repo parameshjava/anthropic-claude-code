@@ -23,9 +23,9 @@ Claude Code ships with **six** built-in subagent types. Each is purpose-built fo
 
 #### 1. Explore — Fast Codebase Search
 
-**Purpose:** Read-only search and exploration at speed.
-**Tools:** Glob, Grep, Read (read-only — cannot edit or execute)
-**Best for:** Finding files, searching patterns, answering "where is X used?" questions.
+**Purpose:** Read-only search and exploration at speed.  
+**Tools:** Glob, Grep, Read (read-only — cannot edit or execute). 
+**Best for:** Finding files, searching patterns, answering "where is X used?" questions.  
 
 The Explore agent supports three thoroughness levels: `quick` (basic search), `medium` (moderate exploration), `very thorough` (comprehensive analysis across multiple locations and naming conventions).
 
@@ -61,9 +61,9 @@ Result: Authentication flow:
 
 #### 2. Plan — Architecture and Strategy Research
 
-**Purpose:** Investigate the codebase to inform implementation plans.
-**Tools:** Glob, Grep, Read (read-only — research only, no edits)
-**Best for:** Designing implementation strategies, identifying critical files, considering architectural trade-offs before writing code.
+**Purpose:** Investigate the codebase to inform implementation plans.  
+**Tools:** Glob, Grep, Read (read-only — research only, no edits). 
+**Best for:** Designing implementation strategies, identifying critical files, considering architectural trade-offs before writing code.  
 
 The Plan agent prevents infinite nesting of planning within planning. It researches and returns findings so your main `/plan` session stays focused on decisions, not exploration.
 
@@ -84,9 +84,9 @@ Plan agent findings:
 
 #### 3. General-Purpose — Full-Capability Independent Worker
 
-**Purpose:** Complex, multi-step tasks that need full tool access but should run independently.
-**Tools:** All tools (Read, Edit, Write, Bash, Glob, Grep, and more)
-**Best for:** Running test suites, analyzing verbose output, performing multi-step tasks that would clutter the main session.
+**Purpose:** Complex, multi-step tasks that need full tool access but should run independently.  
+**Tools:** All tools (Read, Edit, Write, Bash, Glob, Grep, and more). 
+**Best for:** Running test suites, analyzing verbose output, performing multi-step tasks that would clutter the main session.  
 
 This is the most powerful subagent — it can do everything the main session can do, but in an isolated context.
 
@@ -121,9 +121,9 @@ Result: Migration 20240315_add_soft_delete:
 
 #### 4. Code Reviewer — Implementation Validation
 
-**Purpose:** Review completed code against plans and coding standards.
-**Tools:** All tools (full access to read code, run checks, verify)
-**Best for:** Validating that a major implementation step matches the original plan, checking for missed requirements, and catching quality issues.
+**Purpose:** Review completed code against plans and coding standards.  
+**Tools:** All tools (full access to read code, run checks, verify). 
+**Best for:** Validating that a major implementation step matches the original plan, checking for missed requirements, and catching quality issues.  
 
 Use this after completing a logical chunk of work — a feature, a refactor step, or any numbered step from your implementation plan.
 
@@ -145,9 +145,9 @@ Result:
 
 #### 5. GitHub PR Reviewer — Pull Request Analysis
 
-**Purpose:** Thoroughly review GitHub Pull Requests for quality, correctness, and impact.
-**Tools:** Bash, Glob, Grep, Read, Edit, Write, WebFetch, WebSearch
-**Best for:** Reviewing PRs before merge — checking code quality, identifying risks, assessing impact of proposed changes.
+**Purpose:** Thoroughly review GitHub Pull Requests for quality, correctness, and impact.  
+**Tools:** Bash, Glob, Grep, Read, Edit, Write, WebFetch, WebSearch. 
+**Best for:** Reviewing PRs before merge — checking code quality, identifying risks, assessing impact of proposed changes.  
 
 Example:
 ```
@@ -170,9 +170,9 @@ Result:
 
 #### 6. Claude Code Guide — Product Knowledge Expert
 
-**Purpose:** Answer questions about Claude Code features, capabilities, and best practices.
-**Tools:** Glob, Grep, Read, WebFetch, WebSearch
-**Best for:** Questions about Claude Code itself — hooks, slash commands, MCP servers, settings, IDE integrations, keyboard shortcuts, the Agent SDK, and the Claude API.
+**Purpose:** Answer questions about Claude Code features, capabilities, and best practices.  
+**Tools:** Glob, Grep, Read, WebFetch, WebSearch. 
+**Best for:** Questions about Claude Code itself — hooks, slash commands, MCP servers, settings, IDE integrations, keyboard shortcuts, the Agent SDK, and the Claude API.  
 
 Example:
 ```
@@ -254,12 +254,12 @@ color: cyan
 
 You are an expert GitHub Pull Request reviewer. When given a PR URL:
 
-1. Fetch PR metadata, diff, and CI status using gh CLI
-2. Fetch CLAUDE.md from the repo — all suggestions must align with project rules
-3. Extract JIRA ticket ID from PR title/body/branch, fetch ticket details
-4. Analyze story-to-code alignment (full match, partial, scope creep, misaligned)
-5. Check codebase for duplicate logic the PR could reuse instead of reinventing
-6. Post review to GitHub with inline comments and suggestion blocks
+1. Fetch PR metadata, diff, and CI status using gh CLI. 
+2. Fetch CLAUDE.md from the repo — all suggestions must align with project rules. 
+3. Extract JIRA ticket ID from PR title/body/branch, fetch ticket details. 
+4. Analyze story-to-code alignment (full match, partial, scope creep, misaligned). 
+5. Check codebase for duplicate logic the PR could reuse instead of reinventing. 
+6. Post review to GitHub with inline comments and suggestion blocks. 
 
 Prioritize findings:
 - Critical: security vulnerabilities, data loss, breaking changes, logic errors
