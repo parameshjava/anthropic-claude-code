@@ -107,6 +107,50 @@ Do not guess function signatures, types, or config values.
 
 This single line eliminates the most common source of hallucinations: Claude silently inventing details it does not have.
 
+### Real-World Analogy: How Engineers Already Prevent "Hallucinations"
+
+The trust pipeline is not new — it mirrors what engineering teams already do to prevent gaps between requirements and delivered functionality:
+
+```mermaid
+flowchart TB
+    subgraph eng["Engineering Process"]
+        direction TB
+        G["<b>Grooming Call</b><br>PO presents requirements<br>Engineers ask clarifying questions"]
+        D["<b>Design Review</b><br>Present approach to Lead / Architect<br>Get approval before coding"]
+        DEV["<b>Development</b><br>Business doubt → ask Product Owner<br>Technical doubt → ask Lead"]
+        V["<b>Validation</b><br>End-to-end testing<br>Demo to PO / stakeholders"]
+        G --> D --> DEV --> V
+    end
+
+    subgraph cc["Claude Code Trust Pipeline"]
+        direction TB
+        S1["<b>Step 1: Ground</b><br>Load actual source files<br>Ask, don't assume"]
+        S2["<b>Step 2: Plan</b><br>Preview approach via /plan<br>Get human approval before edits"]
+        S3["<b>Step 3–4: Evidence + Escalate</b><br>Cite file paths and test output<br>Stop and ask when unsure"]
+        S4["<b>Step 5–6: Validate + Review</b><br>Run tests, linters, security scans<br>Summarize changes before commit"]
+        S1 --> S2 --> S3 --> S4
+    end
+
+    G -. "same principle" .-> S1
+    D -. "same principle" .-> S2
+    DEV -. "same principle" .-> S3
+    V -. "same principle" .-> S4
+
+    style eng fill:#e8f4fd,stroke:#1a73e8
+    style cc fill:#e8f5e9,stroke:#34a853
+```
+
+**The pattern is identical:**
+
+| Engineering Practice                                                             | Why It Works                                                        | Claude Code Equivalent                                              |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Grooming call** — PO explains requirements, engineers ask questions            | Eliminates ambiguity at the source                                  | **Ground** — load actual files, ask when info is missing            |
+| **Design review** — present approach to Lead/Architect before coding             | Catches wrong direction early, before effort is wasted              | **Plan** — `/plan` previews approach, human approves before edits   |
+| **Ask during development** — business questions → PO, technical questions → Lead | Prevents developers from guessing and building the wrong thing      | **Escalate** — Claude stops and asks instead of inventing details   |
+| **End-to-end validation** — test the feature, demo to stakeholders               | Proves the delivered functionality matches the original requirement | **Validate + Review** — run tests, summarize changes, cite evidence |
+
+> **The gap between "what PO asked for" and "what got built" is the engineering equivalent of hallucination.** Every step in the trust pipeline exists to close that gap — just as every step in your engineering process exists to close the requirements-to-delivery gap.
+
 ### The Golden Rule
 
 > **Never trust "looks right." Prefer file evidence, test output, and explicit uncertainty.**
