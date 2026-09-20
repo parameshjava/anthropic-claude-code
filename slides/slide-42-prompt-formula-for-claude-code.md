@@ -26,6 +26,19 @@ Output: summarize changed files, evidence, and remaining uncertainty
 
 For uncertain or cross-cutting work, ask for a Plan-mode proposal first. A precise prompt is an engineering specification, not a wish.
 
+### Example: performance investigation
+
+```text
+Goal: Reduce the slow product-search query while preserving the API contract.
+Scope: Read @src/api/products.ts, @src/repositories/productRepository.ts,
+and @src/db/migrations/20250812_create_products.ts only.
+Constraints: Do not drop existing indexes or change query parameters.
+Proof: Run EXPLAIN ANALYZE before and after; add a focused regression test.
+Output: Root cause, index trade-off, changed files, and command output.
+```
+
+For a high-risk API or migration task, add error handling, rollback, security-review, compatibility, and consumer-impact requirements to the same formula rather than relying on Claude to infer them.
+
 ### Sources
 
 - [Claude Code overview](https://code.claude.com/docs/en/overview)

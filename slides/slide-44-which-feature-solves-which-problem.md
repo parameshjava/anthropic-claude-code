@@ -23,6 +23,16 @@
 
 Choose the smallest mechanism that gives the right durability and enforcement. Do not build a plugin or MCP server for a one-line project rule.
 
+### Skill versus agent versus MCP
+
+| Need | Choose | Why |
+| --- | --- | --- |
+| Guide the engineer through TDD, debugging, or documentation | Skill | Methodology stays in the main session |
+| Run tests, analyze logs, or review a diff without adding noise | Subagent | Separate context returns a concise result |
+| Read or change an issue tracker, database, or dashboard | MCP or CLI/API | Provides the external capability an agent or skill can use |
+
+Start a reusable workflow as a local `.claude/skills/<name>/SKILL.md`. Package it as a plugin only when it is stable enough to distribute across projects and teams.
+
 ### Sources
 
 - [Claude Code overview](https://code.claude.com/docs/en/overview)

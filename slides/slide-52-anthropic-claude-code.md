@@ -21,6 +21,17 @@ Claude Code accelerates engineering work when the team supplies clear context, b
 | Measure | Rework avoided, verification rate, developer friction, and usage |
 | Owner | One engineering owner and one security or platform partner |
 
+### First-week checklist
+
+| Time | Minimum outcome |
+| --- | --- |
+| Days 1-2 | Give a pilot group access; add a reviewed root `CLAUDE.md` with architecture and test commands |
+| Days 3-4 | Add a few path-scoped rules for common risk areas; approve only integrations with a demonstrated need |
+| Day 5 | Run a working session on prompt scope, Plan mode, context controls, evidence, and diff review |
+| After the pilot | Add hooks, custom agents, and CI automation only where repeated evidence shows they improve the workflow |
+
+Measure matched work against a baseline: cycle time, review rework, escaped defects, meaningful coverage, adoption, and developer experience. Do not promise a universal productivity multiplier.
+
 ### The operating rule
 
 Use the tool to speed up development. Engineers remain responsible for every plan, pull request, approval, deployment, and merged change. Build the workflow so that responsibility is supported by evidence and enforceable controls, not replaced by automation.

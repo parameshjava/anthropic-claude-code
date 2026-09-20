@@ -15,6 +15,17 @@ Ground → Plan → Implement → Prove → Review → Escalate uncertainty
 - **Review:** compare the result against the plan and acceptance criteria, preferably with a fresh reviewer for consequential work.
 - **Escalate:** require Claude to state what it could not reproduce or verify. "I do not know" is safer than an invented fix.
 
+### Put uncertainty into durable guidance
+
+```markdown
+## Grounding rules
+- Read the relevant source files before proposing a change.
+- Never invent interfaces, schemas, or config values not present in the codebase.
+- If a required detail is missing or ambiguous, stop and ask before editing.
+```
+
+This is the operational form of **ask, don't assume**. It protects against plausible but fabricated signatures, column names, configuration, and behavior; enforce irreversible boundaries separately with permissions, hooks, and CI.
+
 ### Example prompt
 
 "Reproduce the login failure in @src/auth/. Quote the root-cause lines, propose the smallest fix, and do not edit until the plan is accepted. Add a failing regression test, run it before and after the change, show the diff, and list any assumption you could not verify."

@@ -39,29 +39,29 @@ and invocation patterns.
 
 | Chapter | Title                                                                       | What It Covers                                                                                                              |
 | ------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| 1       | [Claude Code for Enterprise Engineering](slide-1-enterprise-intro.md)       | Introduction — what Claude Code is and why it matters for enterprise teams                                                  |
-| 2       | [Claude Code Models by Plan](slide-2-models-by-plan.md)                     | Pro, Max, Team, and Enterprise plans, the four-model lineup with IDs, context, and pricing, and what it costs per developer |
-| 3       | [Which Model for Which Task?](slide-3-model-selection.md)                   | Opus as the starting point, Fable for long-horizon work, Sonnet for cost, Haiku for speed                                   |
-| 4       | [Epic Decomposition & Cheat Sheet](slide-4-epic-decomposition.md)           | Converting JIRA/Rally epics into Claude-ready stories with a task-to-model map                                              |
-| 5       | [What This Session Covers](slide-5-session-overview.md)                     | Six pillars for deploying Claude Code effectively                                                                           |
-| 6       | [Claude Code Operating Model](slide-6-operating-model.md)                   | How Claude Code works — tools, memory, delegation, agent teams, verification loop                                           |
-| 7       | [Permission Modes](slide-7-permission-modes.md)                             | Who approves what — Manual, Accept Edits, Plan, Auto, Don't Ask, and Bypass, and the auto mode classifier                   |
-| 8       | [Context Management](slide-8-context-management.md)                         | The context window as a budget — and why forgetting is a safety problem, not just a cost problem                            |
-| 9       | [Managing Quality](slide-9-managing-quality.md)                             | A claim is not evidence — demand proof, run a verification loop, automate the checks that matter                            |
-| 10      | [Human Accountability](slide-10-human-accountability.md)                    | The durability ladder for controls, and why a boundary is only as strong as where you wrote it down                         |
-| 11      | [Context Engineering](slide-11-context-engineering.md)                      | Load only what the task needs — CLAUDE.md, rules, @ references, and context hierarchy                                       |
-| 12      | [Manage Context — Avoid Limits](slide-12-manage-context.md)                 | Stop Claude from scanning everything — force specific file paths and manage token budgets                                   |
-| 13      | [Prompt Formula for Claude Code](slide-13-prompt-formula.md)                | Six-part prompt formula (Goal, Files, Constraints, Scope, Validation, Output) with best practices checklist                 |
-| 14      | [Reduce Hallucinations and Unsafe Edits](slide-14-reduce-hallucinations.md) | Six-step trust pipeline — Ground, Plan, Evidence, Validate, Review, Escalate                                                |
-| 15      | [Which Feature Solves Which Problem?](slide-15-feature-decision-matrix.md)  | CLAUDE.md vs Rules vs Skills vs MCP vs Hooks — decision matrix with skills marketplace guide                                |
-| 16      | [Subagents — Isolate, Specialize, Parallelize](slide-16-subagents.md)       | Built-in agents, custom agents, parallel execution patterns, and agent teams                                                |
-| 17      | [MCP — Connect to Every Tool](slide-17-mcp.md)                              | Model Context Protocol — GitHub, Jira, Slack, databases, and reviewed community/vendor servers                              |
-| 18      | [Enterprise Deployment and Governance](slide-18-enterprise-deployment.md)   | Anthropic Cloud, AWS Bedrock, Google Vertex AI, Microsoft Foundry deployment options                                        |
-| 19      | [Scaling Claude Code Across Teams](slide-19-scaling-teams.md)               | Standardize inputs so Claude Code scales beyond one person                                                                  |
-| 20      | [Hooks — Automate the Agent Lifecycle](slide-20-hooks.md)                   | Deterministic lifecycle triggers — PostToolUse, PreToolUse, Stop hooks                                                      |
-| 21      | [GitHub Actions — Claude in CI/CD](slide-21-github-actions.md)              | Automated PR reviews, test generation, and issue-to-PR workflows                                                            |
-| 22      | [Claude Code Security](slide-22-security.md)                                | Model-assisted vulnerability analysis that complements conventional security tooling                                        |
-| 23      | [Reference & FAQ](slide-23-reference-faq.md)                                | Summary, resources, and frequently asked questions                                                                          |
+| 1       | [Claude Code for Enterprise Engineering](slides/slide-01-claude-code-for.md) | Introduction — what Claude Code is and why it matters for enterprise teams                                                  |
+| 2       | [Claude Code Models by Plan](slides/slide-02-claude-code-models-by-plan.md) | Plan and model selection context                                                                                             |
+| 3       | [Which Model for Which Task?](slides/slide-03-which-model-for-which-task.md) | Match model capability and effort to task shape                                                                              |
+| 4       | [Epic Decomposition & Cheat Sheet](slides/slide-04-epic-decomposition-cheat-sheet.md) | Convert a large outcome into Claude-ready work                                                                              |
+| 5       | [What This Session Covers](slides/slide-05-what-this-session-covers.md)     | Six connected practices for reliable AI engineering                                                                          |
+| 6       | [Claude Code Operating Model](slides/slide-06-claude-code-operating-model.md) | Context, tools, memory, delegation, and verification                                                                         |
+| 7 | [Permission Modes](slides/slide-08-the-six-permission-modes.md) | Manual, Accept Edits, Plan, Auto, Don't Ask, and Bypass permissions |
+| 8 | [Context Management](slides/slide-12-context-management-is-a-safety-control.md) | Context as a finite safety and correctness resource |
+| 9 | [Managing Quality](slides/slide-13-a-claim-is-not-evidence.md) | Evidence, verification loops, and reviewable completion claims |
+| 10 | [Human Accountability](slides/slide-14-the-durability-ladder.md) | Durable guidance, enforcement layers, and accountable approval |
+| 11 | [Context Engineering](slides/slide-18-context-engineering-what-should-load-when.md) | What to load always, by path, or on demand |
+| 12 | [Manage Context — Avoid Limits](slides/slide-19-manage-context-avoid-limits-force-specificity.md) | Specific prompts and session tactics that reduce context waste |
+| 13 | [Prompt Formula for Claude Code](slides/slide-42-prompt-formula-for-claude-code.md) | Goal, scope, constraints, proof, and output |
+| 14 | [Reduce Hallucinations and Unsafe Edits](slides/slide-43-reduce-hallucinations-and-unsafe-edits.md) | Ground, plan, prove, review, and escalate uncertainty |
+| 15 | [Which Feature Solves Which Problem?](slides/slide-44-which-feature-solves-which-problem.md) | Choose CLAU.md, rules, skills, agents, hooks, MCP, or CI deliberately |
+| 16 | [Subagents — Isolate, Specialize, Parallelize](slides/slide-45-subagents-isolate-specialize-and-parallelize-work.md) | Isolated research, review, and parallel work with output contracts |
+| 17 | [MCP — Connect to Every Tool](slides/slide-46-mcp-connect-claude-code-to-every-tool-in-your-stack.md) | Controlled external integrations and least-privilege access |
+| 18 | [Enterprise Deployment and Governance](slides/slide-47-enterprise-deployment-and-governance.md) | Identity, policy, data, spend, observability, and ownership |
+| 19 | [Scaling Claude Code Across Teams](slides/slide-48-scaling-claude-code-across-teams.md) | Standardize the safe, repeatable development path |
+| 20 | [Hooks — Automate the Agent Lifecycle](slides/slide-49-hooks-automate-every-step-of-the-agent-lifecycle.md) | Deterministic lifecycle checks and automation |
+| 21 | [GitHub Actions — Claude in CI/CD](slides/slide-50-github-actions-claude-in-your-ci-cd-pipeline.md) | Least-privilege CI assistance and branch-protected delivery |
+| 22 | [Claude Code Security](slides/slide-51-claude-code-security-reasoning-based-vulnerability-scanning.md) | Evidence-backed vulnerability findings and reviewable patches |
+| 23 | [Reference & FAQ](slides/slide-52-anthropic-claude-code.md) | Adoption decisions, pilot design, and accountable ownership |
 
 ## Key Concepts at a Glance
 
@@ -110,29 +110,6 @@ repeatable engineering and rollout patterns.
 ```
 anthropic-claude-code/
 ├── README.md                                   ← You are here
-├── slide-1-enterprise-intro.md                 ← Chapter 1: Introduction
-├── slide-2-models-by-plan.md                   ← Chapter 2: Models by Plan
-├── slide-3-model-selection.md                  ← Chapter 3: Model Selection
-├── slide-4-epic-decomposition.md               ← Chapter 4: Epic Decomposition
-├── slide-5-session-overview.md                 ← Chapter 5: Session Overview
-├── slide-6-operating-model.md                  ← Chapter 6: Operating Model
-├── slide-7-permission-modes.md                 ← Chapter 7: Permission Modes
-├── slide-8-context-management.md               ← Chapter 8: Context Management
-├── slide-9-managing-quality.md                 ← Chapter 9: Managing Quality
-├── slide-10-human-accountability.md            ← Chapter 10: Human Accountability
-├── slide-11-context-engineering.md             ← Chapter 11: Context Engineering
-├── slide-12-manage-context.md                  ← Chapter 12: Manage Context
-├── slide-13-prompt-formula.md                  ← Chapter 13: Prompt Formula
-├── slide-14-reduce-hallucinations.md           ← Chapter 14: Reduce Hallucinations
-├── slide-15-feature-decision-matrix.md         ← Chapter 15: Feature Decision Matrix
-├── slide-16-subagents.md                       ← Chapter 16: Subagents
-├── slide-17-mcp.md                             ← Chapter 17: MCP
-├── slide-18-enterprise-deployment.md           ← Chapter 18: Enterprise Deployment
-├── slide-19-scaling-teams.md                   ← Chapter 19: Scaling Teams
-├── slide-20-hooks.md                           ← Chapter 20: Hooks
-├── slide-21-github-actions.md                  ← Chapter 21: GitHub Actions
-├── slide-22-security.md                        ← Chapter 22: Security
-├── slide-23-reference-faq.md                   ← Chapter 23: Reference & FAQ
 ├── slides/                             ← Exactly 52 one-to-one deck-slide companions
 │   ├── slide-01-claude-code-for.md
 │   ├── slide-07-four-disciplines-one-idea.md
@@ -215,8 +192,8 @@ Pin this to your team channel.
 | Cap what one CI run can spend                | `--max-budget-usd`     | on a `claude -p` invocation |
 
 Anything said only in the conversation can be lost to `/compact`. A budget
-nobody wrote into a file is in the same category — see [Chapter 10: Human
-Accountability](slide-10-human-accountability.md#spend-has-a-ladder-too).
+nobody wrote into a file is in the same category — see [Slide 14: The durability
+ladder](slides/slide-14-the-durability-ladder.md).
 
 **Which command?**
 
@@ -310,12 +287,12 @@ This project includes two production-ready custom agents as real-world examples:
 - **gh-pr-reviewer** — Reviews GitHub PRs with inline comments, JIRA ticket alignment, codebase consistency checks, and suggestion blocks. Posts directly to GitHub.
 - **year-in-review** — Generates employee performance reviews by aggregating data from GitHub, JIRA, and email. Produces balanced, manager-ready reports.
 
-Both are covered in detail in [Chapter 16](slide-16-subagents.md). Agent definitions are in the [`agents/`](agents/) folder.
+Both are covered in detail in [Slide 45](slides/slide-45-subagents-isolate-specialize-and-parallelize-work.md). Agent definitions are in the [`agents/`](agents/) folder.
 
 ## Skills
 
 Three working skills ship in this repo, in the installable `SKILL.md` format described in
-[Chapter 15](slide-15-feature-decision-matrix.md):
+[Slide 44](slides/slide-44-which-feature-solves-which-problem.md):
 
 | Skill                                                        | Purpose                                    |
 | ------------------------------------------------------------ | ------------------------------------------ |
@@ -325,7 +302,9 @@ Three working skills ship in this repo, in the installable `SKILL.md` format des
 
 ### Skills Marketplace
 
-Chapter 15 includes a comprehensive guide to the skills ecosystem:
+[Slide 17](slides/slide-17-plugins-install-the-discipline-don-t-re-remember-it.md) documents a curated
+official-plugin guide, while [Slide 44](slides/slide-44-which-feature-solves-which-problem.md) explains
+when a skill is the right mechanism:
 
 - **Official:** https://github.com/anthropics/skills
 - **Superpowers framework:** https://github.com/obra/superpowers
@@ -334,22 +313,20 @@ Chapter 15 includes a comprehensive guide to the skills ecosystem:
 
 ## Contributing
 
-To add or update a chapter:
+To add or update a slide companion:
 
-1. Edit the corresponding `slide-N.md` file
+1. Edit the corresponding `slides/slide-NN-*.md` file
 2. Keep content practical — prefer examples over theory
 3. Include real prompts, real commands, and real output
-4. Update this README's table of contents if adding new chapters
+4. Update this README's deck companion map if adding or renumbering slides
 5. Run `python3 scripts/check-docs.py` before committing — it verifies links resolve, skill and
-   agent frontmatter parses, model versions stay in Chapter 2, this tree stays accurate, and
-   every chapter carries its reading-time signpost and footer nav
+   agent frontmatter parses, model versions stay in the designated reference material, and this tree stays accurate
 
-### Chapter depth
+### Slide Companion Depth
 
-Chapters currently range from ~2 to ~23 minutes of reading. Chapters 1, 2, 3, 5, and 17 are the
-thinnest and are the best candidates for expansion; a 4–8 minute target is a reasonable goal for
-each. Chapters 7, 11, 13, and 16 are the longest and may eventually warrant splitting — but the
-23-chapter numbering is referenced by the slide deck, so any split needs a deliberate decision.
+Slide companions are presenter references. Keep a companion focused on one slide's decision or
+workflow; when a topic needs a deeper explanation, link to the relevant official source instead of
+duplicating a full chapter inside the deck notes.
 
 ## Useful Links
 

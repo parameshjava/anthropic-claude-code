@@ -15,9 +15,21 @@
 
 ### Design principles
 
+### Three context tiers
+
+| Tier | What belongs there | Example |
+| --- | --- | --- |
+| Always on | Stable foundation for every task | Root project guidance, user/org instructions, unscoped rules, auto memory |
+| On demand | Information tied to a path or workflow | Path rules, nested guidance, skills, `@` references, subagent findings |
+| External and automated | Capability beyond the repository | Approved MCP, CLI/API access, hooks, and CI workflows |
+
+Use this structure to avoid placing every useful fact in root `CLAUDE.md`. Stable facts load early; conditional procedures and external capability load only when the task establishes a need.
+
 - Keep root guidance concise and stable. If it only matters to one layer or task, move it down or load it on demand.
 - Keep raw logs, generated files, vendor directories, and broad repository scans out of default context unless they are directly relevant.
 - Use `/context` to confirm the guidance and integrations that actually loaded; configuration that is not loaded cannot influence the session.
+
+For large monorepos, consider a sparse worktree or targeted worktree checkout so the agent's visible filesystem matches the module being changed. Keep shared paths in project configuration and developer-specific service paths in personal configuration.
 
 ### Example
 

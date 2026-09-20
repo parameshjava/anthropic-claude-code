@@ -14,12 +14,16 @@
 | Scoped secrets and environments              | Prevents an assistant workflow from inheriting deployment authority |
 | Required status checks and branch protection | Keeps CI evidence and human approval before merge                   |
 | Explicit output contract                     | Makes review comments or generated patches inspectable              |
+| Pinned action revisions                      | Reduces action supply-chain drift                                    |
+| Turn and timeout limits                      | Bounds runtime and spend for each workflow run                       |
 
 ### Useful patterns
 
 - Read-only PR review that reports correctness or security gaps with file references.
 - `@claude` mention that produces a bounded plan or issue analysis.
 - Issue-to-PR automation only in a protected workflow with scoped permissions and mandatory review.
+
+Do not pass an untrusted issue, PR, or comment directly into a write-capable agent workflow. Treat the content as untrusted input; constrain its authority, validate proposed changes, and keep secrets unavailable to fork-originated or otherwise untrusted runs.
 
 ### Example
 

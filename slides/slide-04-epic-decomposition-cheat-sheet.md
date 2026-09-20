@@ -18,6 +18,19 @@
 
 Turn “migrate billing to the new provider” into stories for API contract changes, data migration, retry behavior, observability, and rollback, each with acceptance criteria and a verification step.
 
+### Worked decomposition: notification preferences
+
+**Epic:** Let customers choose email, SMS, and push preferences; marketing opt-out must not block transactional messages; respect regional opt-in requirements; make new channels extensible.
+
+| Story | Acceptance criteria | Dependency or risk |
+| --- | --- | --- |
+| Preference data model | Store user, channel, category, and enabled state; transactional notifications remain enabled | Backfill on a large table may need batched migration |
+| Preferences API | Users can read and update their own settings; attempts to edit another user return `403` | Depends on the data model |
+| Settings UI | Show a channel/category grid; transactional controls are visible but locked | Depends on API response and authorization behavior |
+| Dispatch enforcement | Delivery checks preferences before sending; transactional flow bypasses marketing opt-out | Cache-versus-query latency trade-off |
+
+Use the decomposition prompt to request dependencies, regional compliance rules, alternatives, rollback, and verification per story. For a long requirements document, use Haiku to extract goals and constraints first, then let Opus synthesize the delivery plan.
+
 ### Cheat sheet
 
 - Haiku — triage, summarization, scaffolding

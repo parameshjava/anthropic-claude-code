@@ -18,6 +18,19 @@ Claude Code is Anthropic's coding agent for software engineering work. It is a c
 
 It turns AI from a code generator into a practical engineering collaborator: one that can operate on real repositories, use real tools, and produce verifiable changes.
 
+### The useful mental model
+
+Treat Claude Code like a highly capable senior engineer joining the team. It can reason and act, but it still needs onboarding: architecture, conventions, relevant tools, testing expectations, and boundaries.
+
+| Team input | What it gives the agent |
+| --- | --- |
+| Context | The code, architecture, and decisions relevant to the task |
+| Prompting | A clear outcome, scope, constraints, and proof of done |
+| Delegation | Isolated research and review without polluting the main session |
+| MCP and tools | Controlled access to the systems needed to do the work |
+
+The better this onboarding is, the more safely and effectively Claude Code can contribute. Enterprise adoption is deliberate context and workflow design, not plug-and-play automation.
+
 
 ### Sources
 

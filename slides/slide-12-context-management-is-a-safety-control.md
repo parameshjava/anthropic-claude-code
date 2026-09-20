@@ -15,12 +15,28 @@
 | Wrong path | The approach or edited code is no longer acceptable | Stop, use `/rewind`, then restart from the last sound checkpoint |
 | New task | The current work is complete and the next request is unrelated | Run `/clear`, then begin with a clean prompt and appropriate effort |
 
+### The compaction trap
+
+```text
+"Do not push until I review the diff."
+	↓
+Long investigation and /compact
+	↓
+The conversation-only boundary is no longer active context
+	↓
+Claude may now attempt a push that the old message had blocked
+```
+
+Use a guided compact to preserve a temporary boundary, but use `permissions.ask` for `Bash(git push *)` when the checkpoint must survive every session and compaction.
+
 ### Use the right control at the right time
 
 - **`/context`**: inspect what is loaded and what consumes the context budget before a large task or when answers lose precision.
 - **`/compact <instructions>`**: use proactively at major milestones in the same task. Tell Claude exactly what to preserve: modified files, root cause, tests, unresolved decisions, and active safety boundaries.
 - **`/rewind`**: restore conversation, code, or both after a wrong direction. Use it early rather than carrying failed approaches into later reasoning. Checkpoints do not replace Git for Bash-driven or external changes.
 - **`/clear`**: discard an unrelated finished task. Clear is not compact: compact retains a summary for the same work; clear creates space for a new problem.
+
+After two failed corrections on the same issue, stop accumulating failed approaches. Use `/clear` or `/rewind`, rewrite the prompt with what you learned, and restart from a clean context.
 
 ```text
 /compact keep the auth root cause, modified files, regression test command,

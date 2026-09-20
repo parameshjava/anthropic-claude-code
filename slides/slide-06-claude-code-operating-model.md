@@ -66,6 +66,16 @@ API/
 - Skills = reusable executable workflows such as migration review or API security review
 - For large codebases, directory-scoped CLAUDE.md is usually better than one giant central rule file
 
+### Keep project guidance useful
+
+| Avoid | Why it fails | Prefer |
+| --- | --- | --- |
+| Dumping full API documentation into root `CLAUDE.md` | Costs context on every session | Link to a skill, rule, or source document that loads when needed |
+| Listing every file in the repository | Claude can discover files; the list becomes stale | Describe directory responsibilities and navigation rules |
+| Repeating language conventions Claude already knows | Dilutes the non-obvious rules | Record project-specific commands, constraints, and gotchas |
+| One 300-line root file | Important instructions are lost in noise | Keep root guidance concise; move layer detail beside the layer |
+| Updating guidance without review | Bad instructions affect every future session | Version-control and review it like production configuration |
+
 ### Example task
 
 "Fix the auth token expiry bug. Read @src/controllers/auth.ts and @src/services/authService.ts, run the auth tests, add a regression test, and report the exact result."

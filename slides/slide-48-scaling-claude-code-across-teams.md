@@ -28,6 +28,18 @@ Scaling succeeds when the safe, evidence-based workflow is easier to repeat than
 3. Turn successful patterns into source-controlled skills, rules, and templates.
 4. Review and prune them regularly so guidance stays useful rather than becoming noise.
 
+### A staged rollout
+
+| Stage | Action |
+| --- | --- |
+| Week 1 | Pilot a lean `CLAUDE.md` with two or three engineers in one representative repo |
+| Week 2 | Add path-scoped rules and one or two deterministic local checks |
+| Week 3 | Add only the MCP integrations and specialist agents the pilot repeatedly needs |
+| Week 4 | Run a workshop on prompt structure, context controls, evidence, and review |
+| Ongoing | Track adoption, rework, quality, cost, and policy friction; revise the shared setup |
+
+Every rollout stage needs an owner and a feedback channel. Scale a proven workflow, not a collection of individual preferences.
+
 ### Example
 
 Standardize a small root guide and one verification command first. Add a reviewed `migration-review` skill and a security reviewer only after teams repeatedly need them; enforce organization-wide restrictions through managed settings and CI.

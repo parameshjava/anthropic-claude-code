@@ -24,6 +24,18 @@ Main session: evaluates summary, applies decisions, verifies final result
 - Parallelize independent work. Do not delegate two agents to edit the same files without isolation or coordination.
 - Use a fresh reviewer subagent to challenge an implementation, but keep accountable human approval in the main engineering workflow.
 
+### Common subagent roles
+
+| Role | Tool posture | Best use |
+| --- | --- | --- |
+| Explore | Read-only | Locate files, callers, patterns, and execution paths |
+| Plan researcher | Read-only | Map dependencies and risks for a main-session plan |
+| Test runner | Bash plus read access | Run verbose suites and return failures only |
+| Reviewer | Read plus focused checks | Compare the diff with a plan, standards, and acceptance criteria |
+| Custom specialist | Minimum tools and chosen model | Security audit, migration check, domain-specific analysis |
+
+For example, a low-cost test-runner agent can run a full suite and return pass/fail counts, failed test names, likely root causes, and slow tests without placing the complete output in the main context.
+
 ### Example
 
 Delegate a read-only dependency search to return file-and-line findings, then keep the design decision, code change, and final regression test in the main session.

@@ -22,6 +22,12 @@
 - **Bypass permissions removes approval checks.** It can write protected locations such as `.git` and `.claude`; use it only in an isolated environment that can be discarded.
 - Permission rules remain the durable boundary. Use `.claude/settings.json` to allow routine checks, ask before risky actions, and deny actions your project must never perform.
 
+### Two operational gotchas
+
+- There is no Claude Code "safe mode." The UI calls the review-every-action mode **Manual**; its configuration value remains `default`.
+- The interactive mode cycle is not a recommended workflow order: `Manual → Accept edits → Plan → Manual`, with available optional modes after Plan. Confirm the status bar rather than assuming a session's mode.
+- Project `.claude/settings.json` can set `defaultMode` to values such as `plan`, but `auto` and `bypassPermissions` do not become terminal defaults from project or local settings. Set organization/user policy at the correct scope and verify it with `/status`.
+
 ### Recommended lifecycle for an engineering change
 
 ```text

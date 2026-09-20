@@ -11,6 +11,14 @@ Hooks run deterministic code at defined lifecycle events. Use them when the requ
 | PreToolUse | Inspect an action and allow, prompt, modify, or block it |
 | PostToolUse | Format code, run a focused check, or attach concise result context |
 | Stop | Run a completion check or require evidence before the session ends |
+| PreCompact | Save a small durable task summary before context is condensed |
+
+### Configuration details that decide whether a hook is a control
+
+- Hook configuration contains event matcher groups, each with its own `hooks` array; validate JSON structure against the current reference before relying on a new policy.
+- Command hooks receive structured event JSON on standard input. Parse the relevant `tool_input` field rather than assuming an edited-file environment variable exists.
+- For applicable blocking hook decisions, **exit code `2`** is the blocking outcome. Exit code `1` reports an error but is not automatically a policy block.
+- Test hooks in a disposable fixture for successful execution, handler failures, matcher coverage, and the exact behavior of every event type you rely on.
 
 ### Design hooks as production automation
 
